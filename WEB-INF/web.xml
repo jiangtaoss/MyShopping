@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+  
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GoHallUI</servlet-name>
+    <servlet-class>com.jiangtao.controller.GoHallUI</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ShoppingClServlet</servlet-name>
+    <servlet-class>com.jiangtao.controller.ShoppingClServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OrderClServlet</servlet-name>
+    <servlet-class>com.jiangtao.controller.OrderClServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SubmitOrderServlet</servlet-name>
+    <servlet-class>com.jiangtao.controller.SubmitOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GoShowMyCart</servlet-name>
+    <servlet-class>com.jiangtao.controller.GoShowMyCart</servlet-class>
+  </servlet>
+
+
+ <!--中文乱码处理过滤-->  
+    <filter>
+        <filter-name>EncodingFilter</filter-name><!--过滤器名称-->
+        <filter-class>com.jiangtao.filter.SetCharacterEncodingFilter2</filter-class><!--过滤器类名称，包括包名一致、写全 -->
+        <init-param><!--初始化参数,要指定的字符集编码 -->
+            <param-name>encoding</param-name><!--参数名称 -->
+            <param-value>utf-8</param-value><!--参数值 -->
+        </init-param>
+        
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern> <!--“/*”表示项目下所有资源 -->
+    </filter-mapping>
+
+
+  <servlet-mapping>
+    <servlet-name>GoHallUI</servlet-name>
+    <url-pattern>/GoHallUI</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShoppingClServlet</servlet-name>
+    <url-pattern>/ShoppingClServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderClServlet</servlet-name>
+    <url-pattern>/OrderClServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SubmitOrderServlet</servlet-name>
+    <url-pattern>/SubmitOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GoShowMyCart</servlet-name>
+    <url-pattern>/GoShowMyCart</url-pattern>
+  </servlet-mapping>
+
+</web-app>
